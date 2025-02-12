@@ -1,5 +1,254 @@
-.welcome-container {
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@700,500,400&display=swap');
+
+.welcomeContainer {
   width: 100%;
   height: 100vh;
   position: relative;
-} 
+  background: transparent;
+  overflow: hidden;
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.splineWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2) translateX(-5%);
+  transform-origin: center center;
+  animation: floatAnimation 6s ease-in-out infinite;
+}
+
+.contentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+  padding-top: 10vh;
+}
+
+.logo {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #E0E0E0;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  letter-spacing: 2px;
+  animation: fadeInDown 0.5s ease-out;
+  opacity: 0.9;
+}
+
+.titleWrapper {
+  margin-bottom: 2rem;
+}
+
+.textContent {
+  text-align: center;
+  max-width: 900px;
+  padding: 0 2rem;
+  margin-top: 6vh;
+}
+
+.typingText {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.4rem;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: none;
+  animation: typing 2s steps(30, end);
+}
+
+.gradientText {
+  font-family: 'Clash Display', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: 5px;
+  background: linear-gradient(120deg, #20B2AA, #00CED1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out 2s forwards;
+  margin-top: 0.3rem;
+}
+
+.quote {
+  font-family: 'Satoshi', sans-serif;
+  font-size: 0.9rem;
+  color: #E0E0E0;
+  margin-bottom: 2rem;
+  font-style: italic;
+  margin-top: 1rem;
+  line-height: 1.8;
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out 2.4s forwards;
+  font-weight: 200;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1px;
+}
+
+.ctaButton {
+  font-family: 'Clash Display', sans-serif;
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out 2.8s forwards;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(120deg, #20B2AA, #00CED1);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(32, 178, 170, 0.3);
+  background: linear-gradient(120deg, #00CED1, #20B2AA);
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(5px);
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #20B2AA;
+  margin-left: 5px;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: scale(1.2) translateX(-5%) translateY(0px);
+  }
+  50% {
+    transform: scale(1.2) translateX(-5%) translateY(-10px);
+  }
+  100% {
+    transform: scale(1.2) translateX(-5%) translateY(0px);
+  }
+}
+
+@media (max-width: 768px) {
+  .typingText,
+  .gradientText {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+
+  .textContent {
+    padding: 0 1.5rem;
+    margin-top: 3vh;
+  }
+
+  .quote {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .logo {
+    left: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .ctaButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+
+  .contentOverlay {
+    padding-top: 8vh;
+  }
+
+  .titleWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .quote {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    margin-top: 0.8rem;
+  }
+}
