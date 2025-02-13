@@ -23,31 +23,33 @@ export default function Mission() {
       // Start the animation
       animate();
 
-      // Camera setup
+      // Set up camera
       const camera = splineApp.camera;
       if (camera) {
-        camera.position.z = 3;
-        camera.position.y = 0.3;
-        camera.position.x = -2.8;
-        
-        camera.fov = 12;
-        camera.near = 0.01;
-        camera.far = 1000;
+        camera.position.z = 1000;
+        camera.position.y = 0;
+        camera.position.x = 0;
+        camera.fov = 45;
         camera.updateProjectionMatrix();
         
+        // Disable camera controls to prevent zooming
+        if (splineApp.setZoom) {
+          splineApp.setZoom(1);
+        }
+        
+        // Disable scroll interactions
         if (camera.controls) {
-          camera.controls.enable = true;
-          camera.controls.enableZoom = true;
-          camera.controls.enablePan = true;
-          camera.controls.enableRotate = true;
-          camera.controls.minDistance = 1.2;
-          camera.controls.maxDistance = 50;
-          camera.controls.dampingFactor = 0.01;
-          camera.controls.enableDamping = true;
-          camera.controls.update();
+          camera.controls.enableZoom = false;
+          camera.controls.enableScroll = false;
+          camera.controls.enableScrollWheel = false;
         }
       }
     }
+  };
+
+  const handleWheel = (e) => {
+    // Prevent default scroll behavior on the Spline canvas
+    e.preventDefault();
   };
 
   // Cleanup function
@@ -62,7 +64,10 @@ export default function Mission() {
 
   return (
     <div className={styles.welcomeContainer}>
-      <div className={styles.splineWrapper}>
+      <div 
+        className={styles.splineWrapper} 
+        onWheel={handleWheel}
+      >
         <Spline 
           scene="https://prod.spline.design/askxNGSE-R2XNbtD/scene.splinecode"
           onLoad={handleSplineLoad}

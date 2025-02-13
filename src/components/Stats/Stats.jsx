@@ -58,10 +58,10 @@ export default function Stats() {
 
       // Update Spline model rotation if available
       if (splineRef.current) {
-        const model = splineRef.current.findObjectByName('Scene'); // Replace with your actual model name
+        const model = splineRef.current.findObjectByName('Scene');
         if (model) {
-          model.rotation.y = normalizedX * 0.1;
-          model.rotation.x = normalizedY * 0.1;
+          model.rotation.y = normalizedX * 0.05;
+          model.rotation.x = normalizedY * 0.05;
         }
       }
     };
@@ -80,14 +80,7 @@ export default function Stats() {
         />
       </div>
       
-      <motion.div 
-        className={styles.statsContent}
-        animate={{
-          x: mousePosition.x * 20,
-          y: mousePosition.y * 20,
-        }}
-        transition={{ type: "spring", stiffness: 150, damping: 15 }}
-      >
+      <div className={styles.statsContent}>
         <motion.div 
           className={styles.tagWrapper}
           initial={{ opacity: 0, y: 20 }}
@@ -120,26 +113,17 @@ export default function Stats() {
                 type: "spring"
               }}
               whileHover={{ 
-                scale: 1.05,
-                rotate: mousePosition.x * 2,
+                scale: 1.02,
                 transition: { duration: 0.2 }
               }}
             >
-              <motion.h3 
-                className={styles.statNumber}
-                animate={{
-                  x: mousePosition.x * 10,
-                  y: mousePosition.y * 10,
-                }}
-              >
-                {stat.number}
-              </motion.h3>
+              <h3 className={styles.statNumber}>{stat.number}</h3>
               <h4 className={styles.statLabel}>{stat.label}</h4>
               <p className={styles.statDescription}>{stat.description}</p>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 } 
