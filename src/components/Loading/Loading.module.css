@@ -1,0 +1,23 @@
+.loadingContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);  /* Reduced from 1.5 to 1.2 for slightly smaller scale */
+}
+
+/* Add a wrapper to handle overflow */
+.splineWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+} 
