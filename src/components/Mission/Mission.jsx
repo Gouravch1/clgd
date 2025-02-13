@@ -1,6 +1,6 @@
 import Spline from '@splinetool/react-spline';
 import styles from './Mission.module.css';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 export default function Mission() {
   const splineRef = useRef(null);
@@ -9,35 +9,16 @@ export default function Mission() {
     if (splineApp) {
       splineRef.current = splineApp;
       
-      // Get the main scene object
-      const scene = splineApp.scene;
-      
-      // Set up rotation animation
-      const animate = () => {
-        if (scene) {
-          scene.rotation.y += 0.003;
-        }
-        requestAnimationFrame(animate);
-      };
-      
-      // Start the animation
-      animate();
-
       // Set up camera
       const camera = splineApp.camera;
       if (camera) {
-        camera.position.z = 1000;
+        camera.position.z = 1200; // Adjusted for new model
         camera.position.y = 0;
         camera.position.x = 0;
         camera.fov = 45;
         camera.updateProjectionMatrix();
         
-        // Disable camera controls to prevent zooming
-        if (splineApp.setZoom) {
-          splineApp.setZoom(1);
-        }
-        
-        // Disable scroll interactions
+        // Disable zoom and scroll interactions
         if (camera.controls) {
           camera.controls.enableZoom = false;
           camera.controls.enableScroll = false;
@@ -48,19 +29,8 @@ export default function Mission() {
   };
 
   const handleWheel = (e) => {
-    // Prevent default scroll behavior on the Spline canvas
     e.preventDefault();
   };
-
-  // Cleanup function
-  useEffect(() => {
-    return () => {
-      if (splineRef.current) {
-        // Stop any ongoing animations when component unmounts
-        splineRef.current = null;
-      }
-    };
-  }, []);
 
   return (
     <div className={styles.welcomeContainer}>
@@ -69,7 +39,7 @@ export default function Mission() {
         onWheel={handleWheel}
       >
         <Spline 
-          scene="https://prod.spline.design/askxNGSE-R2XNbtD/scene.splinecode"
+          scene="https://prod.spline.design/2DsKXVAe9BRVOh6u/scene.splinecode"
           onLoad={handleSplineLoad}
           style={{ width: '100%', height: '100%' }}
         />
