@@ -34,10 +34,7 @@ export default function Mission() {
 
   return (
     <div className={styles.welcomeContainer}>
-      <div 
-        className={styles.splineWrapper} 
-        onWheel={handleWheel}
-      >
+      <div className={styles.splineWrapper} onWheel={handleWheel}>
         <Spline 
           scene="https://prod.spline.design/2DsKXVAe9BRVOh6u/scene.splinecode"
           onLoad={handleSplineLoad}
@@ -46,42 +43,43 @@ export default function Mission() {
       </div>
       <div className={styles.missionContent}>
         <div className={styles.tagWrapper}>
-          <span className={styles.tag}>OUR MISSION</span>
+          <span className={styles.tag}>OUR VISION</span>
         </div>
         
         <div className={styles.titleWrapper}>
-          <h2>Empowering Change</h2>
-          <h2 className={styles.gradientText}>Through Innovation</h2>
+          <h2>Empowering Student</h2>
+          <h2 className={styles.gradientText}>Visionaries</h2>
         </div>
         
         <p className={styles.missionText}>
-          At CLGD, we're dedicated to fostering systemic solutions that create lasting 
-          positive impact. Through innovative approaches and collaborative partnerships, 
-          we empower the next generation of change-makers.
+          We are dedicated to discovering and empowering college students with 
+          transformative visions for social change. Our mission is to provide a platform 
+          where innovative minds can collaborate, grow, and turn their aspirations for 
+          global impact into reality.
         </p>
         
         <div className={styles.missionPoints}>
           <div className={styles.point}>
             <div className={styles.pointNumber}>01</div>
             <div className={styles.pointContent}>
-              <h3>Systemic Solutions</h3>
-              <p>Creating frameworks that address root causes and drive sustainable change</p>
+              <h3>Student Empowerment</h3>
+              <p>Identifying and nurturing visionary students from colleges who are passionate about social change</p>
             </div>
           </div>
           
           <div className={styles.point}>
             <div className={styles.pointNumber}>02</div>
             <div className={styles.pointContent}>
-              <h3>Student Innovation</h3>
-              <p>Empowering students to pioneer breakthrough approaches to social impact</p>
+              <h3>Vision to Reality</h3>
+              <p>Supporting students in transforming their innovative ideas into actionable solutions</p>
             </div>
           </div>
           
           <div className={styles.point}>
             <div className={styles.pointNumber}>03</div>
             <div className={styles.pointContent}>
-              <h3>Global Collaboration</h3>
-              <p>Building networks that amplify impact across communities worldwide</p>
+              <h3>Global Impact</h3>
+              <p>Creating a network of change-makers who drive meaningful societal transformation worldwide</p>
             </div>
           </div>
         </div>

@@ -9,24 +9,24 @@ export default function Stats() {
 
   const stats = [
     {
+      number: "1000+",
+      label: "Student Innovators",
+      description: "Passionate minds driving social change"
+    },
+    {
       number: "50+",
-      label: "Partner Colleges",
-      description: "Leading institutions across the globe"
+      label: "Impact Projects",
+      description: "Addressing critical global challenges"
     },
     {
-      number: "10K+",
-      label: "Active Students",
-      description: "Engaged in innovation projects"
+      number: "20+",
+      label: "Partner Organizations",
+      description: "Supporting student initiatives"
     },
     {
-      number: "100+",
-      label: "Projects Launched",
-      description: "Making real-world impact"
-    },
-    {
-      number: "25+",
-      label: "Countries Reached",
-      description: "Global collaboration network"
+      number: "15+",
+      label: "Focus Areas",
+      description: "From education to sustainability"
     }
   ];
 
@@ -87,7 +87,7 @@ export default function Stats() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className={styles.tag}>IMPACT METRICS</span>
+          <span className={styles.tag}>OUR IMPACT</span>
         </motion.div>
         
         <motion.div 
@@ -96,8 +96,8 @@ export default function Stats() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2>Transforming Education</h2>
-          <h2 className={styles.gradientText}>Through Innovation</h2>
+          <h2>Catalyzing Student-Led</h2>
+          <h2 className={styles.gradientText}>Social Innovation</h2>
         </motion.div>
         
         <div className={styles.statsGrid}>

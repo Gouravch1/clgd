@@ -2,6 +2,16 @@ import Spline from '@splinetool/react-spline';
 import styles from './Welcome.module.css';
 
 const Welcome = () => {
+  const handleScrollDown = () => {
+    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const targetPosition = currentPosition + window.innerHeight;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className={styles.welcomeContainer}>
       {/* Spline Background */}
@@ -35,6 +45,10 @@ const Welcome = () => {
             JOIN US
             <span className={styles.arrow}>→</span>
           </button>
+        </div>
+        
+        <div className={styles.scrollDownButton} onClick={handleScrollDown}>
+          <span className={styles.scrollArrow}>↓</span>
         </div>
       </div>
     </div>
