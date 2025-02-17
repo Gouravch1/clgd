@@ -3,6 +3,7 @@ import Pageable from 'pageable';
 import Welcome from './components/Welcome/Welcome';
 import Mission from './components/Mission/Mission';
 import Stats from './components/Stats/Stats';
+import Partner from './components/partner/Partner';
 import Loading from './components/Loading/Loading';
 import styles from './App.module.css';
 
@@ -51,6 +52,9 @@ export default function App() {
       </div>
       <div data-anchor="page-3" className={styles.page}>
         <Stats />
+      </div>
+      <div data-anchor="page-4" className={styles.page}>
+        <Partner />
       </div>
     </div>
   );
