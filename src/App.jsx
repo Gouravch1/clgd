@@ -5,6 +5,7 @@ import Mission from './components/Mission/Mission';
 import Stats from './components/Stats/Stats';
 import Partner from './components/partner/Partner';
 import Loading from './components/Loading/Loading';
+import Footer from './components/Footer/Footer';
 import styles from './App.module.css';
 
 export default function App() {
@@ -55,6 +56,9 @@ export default function App() {
       </div>
       <div data-anchor="page-4" className={styles.page}>
         <Partner />
+      </div>
+      <div data-anchor="page-5" className={styles.page}>
+        <Footer />
       </div>
     </div>
   );
