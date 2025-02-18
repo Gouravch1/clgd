@@ -1,0 +1,218 @@
+.create-community-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .create-community-modal {
+    background-color: #2d2f35;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #3f4147;
+  }
+  
+  .modal-header h2 {
+    color: #f3f4f6;
+    margin: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  
+  .close-btn:hover {
+    background-color: #36393f;
+    color: #f3f4f6;
+  }
+  
+  .community-form {
+    padding: 20px;
+  }
+  
+  .form-section {
+    margin-bottom: 24px;
+  }
+  
+  .form-section label {
+    display: block;
+    color: #f3f4f6;
+    margin-bottom: 8px;
+  }
+  
+  .image-upload {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  
+  .image-upload-label {
+    width: 150px;
+    height: 150px;
+    border-radius: 16px;
+    border: 2px dashed #3f4147;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #9ca3af;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  
+  .image-upload-label:hover {
+    border-color: #20B2AA;
+    color: #20B2AA;
+  }
+  
+  .preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #3f4147;
+    background-color: #36393f;
+    color: #f3f4f6;
+    transition: all 0.2s;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    border-color: #20B2AA;
+    box-shadow: 0 0 0 2px rgba(32, 178, 170, 0.2);
+  }
+  
+  .privacy-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .privacy-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #36393f;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .privacy-option:hover {
+    background-color: #40444b;
+  }
+  
+  .privacy-option input[type="radio"] {
+    accent-color: #20B2AA;
+  }
+  
+  .privacy-option div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .privacy-option span {
+    color: #f3f4f6;
+  }
+  
+  .privacy-option small {
+    color: #9ca3af;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 32px;
+  }
+  
+  .cancel-btn,
+  .create-btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .cancel-btn {
+    background-color: #36393f;
+    color: #f3f4f6;
+  }
+  
+  .create-btn {
+    background-color: #20B2AA;
+    color: white;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #40444b;
+  }
+  
+  .create-btn:hover {
+    background-color: #00CED1;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .create-community-modal {
+      width: 95%;
+      margin: 20px;
+    }
+    
+    .privacy-options {
+      flex-direction: column;
+    }
+  }
