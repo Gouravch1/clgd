@@ -75,4 +75,4 @@ function App() {
   );
 }
 
-export default App; // Add this line to export App as default
+export default App;
