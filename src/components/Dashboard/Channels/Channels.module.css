@@ -1,0 +1,232 @@
+.channelsContainer {
+    padding: 24px;
+    height: 100%;
+  }
+  
+  .channelsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .channelsHeader h1 {
+    color: #f3f4f6;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .headerActions {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .createBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #20B2AA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .createBtn:hover {
+    background: #00CED1;
+  }
+  
+  .searchBar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #36393f;
+    border: 1px solid #3f4147;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .searchBar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #f3f4f6;
+    font-size: 14px;
+  }
+  
+  .searchBar input:focus {
+    outline: none;
+  }
+  
+  .searchBar svg {
+    color: #9ca3af;
+  }
+  
+  .channelsGrid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 24px;
+    height: calc(100vh - 200px);
+  }
+  
+  .categoriesList {
+    background: #2d2f35;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #3f4147;
+    overflow-y: auto;
+  }
+  
+  .category {
+    margin-bottom: 24px;
+  }
+  
+  .categoryHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding: 0 8px;
+  }
+  
+  .categoryHeader h3 {
+    color: #f3f4f6;
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .categoryIcon {
+    color: #20B2AA;
+  }
+  
+  .channelsList {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .channelItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .channelItem:hover {
+    background: #36393f;
+    color: #f3f4f6;
+  }
+  
+  .channelItem.active {
+    background: #36393f;
+    color: #20B2AA;
+  }
+  
+  .channelContent {
+    background: #2d2f35;
+    border-radius: 12px;
+    border: 1px solid #3f4147;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .channelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #3f4147;
+  }
+  
+  .channelInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .channelInfo h2 {
+    color: #f3f4f6;
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .settingsBtn {
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .settingsBtn:hover {
+    background: #36393f;
+    color: #20B2AA;
+  }
+  
+  .channelMessages {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+  }
+  
+  /* Scrollbar styling */
+  .categoriesList::-webkit-scrollbar,
+  .channelMessages::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .categoriesList::-webkit-scrollbar-track,
+  .channelMessages::-webkit-scrollbar-track {
+    background: #2d2f35;
+  }
+  
+  .categoriesList::-webkit-scrollbar-thumb,
+  .channelMessages::-webkit-scrollbar-thumb {
+    background: #3f4147;
+    border-radius: 3px;
+  }
+  
+  .categoriesList::-webkit-scrollbar-thumb:hover,
+  .channelMessages::-webkit-scrollbar-thumb:hover {
+    background: #40444b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .channelsGrid {
+      grid-template-columns: 240px 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .channelsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .categoriesList {
+      display: none;
+    }
+    
+    .categoriesList.active {
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 280px;
+      z-index: 100;
+    }
+  }

@@ -28,12 +28,12 @@
 }
 
 .partner-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Clash Display', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient(to right, #fff, #94a3b8);
+  background: linear-gradient(to right, #fff, #20B2AA);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -42,7 +42,7 @@
 }
 
 .partner-subtitle {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Clash Display', sans-serif;
   font-size: 1.1rem;
   font-weight: 400;
   color: #94a3b8;
@@ -66,8 +66,8 @@
 
 .card-stack-wrapper {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
+  display: flexbox;
+  justify-content: left;
   padding-left: 0rem;
 }
 
@@ -107,9 +107,9 @@
   height: 100%;
   transform-style: preserve-3d;
   box-shadow: 
-    0 0 25px rgba(45, 212, 191, 0.4),
-    0 0 40px rgba(45, 212, 191, 0.2),
-    inset 0 0 15px rgba(45, 212, 191, 0.3);
+    0 0 25px rgba(32, 178, 170, 0.4),
+    0 0 40px rgba(0, 206, 209, 0.2),
+    inset 0 0 15px rgba(32, 178, 170, 0.3);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -144,8 +144,8 @@
   transform: rotateY(180deg);
   background: linear-gradient(
     135deg,
-    rgba(13, 148, 136, 0.98) 0%,
-    rgba(15, 118, 110, 0.98) 100%
+    rgba(32, 178, 170, 0.98) 0%,
+    rgba(0, 206, 209, 0.98) 100%
   );
   color: white;
   display: flex;
@@ -157,7 +157,7 @@
 }
 
 .card-back h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Clash Display', sans-serif;
   font-size: 1.3rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -166,7 +166,7 @@
 }
 
 .card-back p {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Clash Display', sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -198,9 +198,9 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(20, 184, 166, 0.92) 0%,
-    rgba(13, 148, 136, 0.95) 50%,
-    rgba(15, 118, 110, 0.92) 100%
+    rgba(32, 178, 170, 0.92) 0%,
+    rgba(0, 206, 209, 0.95) 50%,
+    rgba(32, 178, 170, 0.92) 100%
   );
   display: flex;
   align-items: center;
@@ -258,9 +258,9 @@
 /* Enhanced hover effects */
 .partner-card:hover .card-inner {
   box-shadow: 
-    0 0 30px rgba(45, 212, 191, 0.6),
-    0 0 50px rgba(45, 212, 191, 0.3),
-    inset 0 0 20px rgba(45, 212, 191, 0.4);
+    0 0 30px rgba(32, 178, 170, 0.6),
+    0 0 50px rgba(0, 206, 209, 0.3),
+    inset 0 0 20px rgba(32, 178, 170, 0.4);
 }
 
 .partner-card:hover .logo-container::before {

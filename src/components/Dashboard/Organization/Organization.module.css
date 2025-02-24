@@ -1,0 +1,51 @@
+.orgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjust this value based on your header/padding */
+    padding: 24px;
+  }
+  
+  .joinCard {
+    background: #2d2f35;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #3f4147;
+    max-width: 400px;
+    width: 100%;
+    transform: translateY(-5%); /* Slight upward adjustment for visual balance */
+  }
+  
+  .orgIcon {
+    color: #20B2AA;
+    margin-bottom: 20px;
+  }
+  
+  .joinCard h2 {
+    color: #f3f4f6;
+    margin: 0 0 8px 0;
+    font-size: 24px;
+  }
+  
+  .joinCard p {
+    color: #9ca3af;
+    margin: 0 0 24px 0;
+    font-size: 16px;
+  }
+  
+  .joinBtn {
+    background: #20B2AA;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .joinBtn:hover {
+    background: #00CED1;
+    transform: translateY(-2px);
+  }

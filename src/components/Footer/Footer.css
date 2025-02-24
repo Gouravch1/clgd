@@ -40,9 +40,10 @@
 }
 
 .footer-brand h2 {
+  font-family: 'Clash Display', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
-  background: linear-gradient(45deg, #fff, #2dd4bf);
+  background: linear-gradient(45deg, #fff, #20B2AA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -66,9 +67,9 @@
 }
 
 .social-icon:hover {
-  color: #2dd4bf;
+  color: #00CED1;
   transform: translateY(-3px);
-  filter: drop-shadow(0 0 8px #2dd4bf);
+  filter: drop-shadow(0 0 8px #00CED1);
 }
 
 /* Links Section */
@@ -85,6 +86,7 @@
 }
 
 .link-column h3 {
+  font-family: 'Clash Display', sans-serif;
   color: #fff;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
@@ -100,8 +102,8 @@
   bottom: -5px;
   width: 30px;
   height: 2px;
-  background: #2dd4bf;
-  box-shadow: 0 0 10px #2dd4bf;
+  background: #20B2AA;
+  box-shadow: 0 0 10px #20B2AA;
 }
 
 .link-column a {
@@ -122,7 +124,7 @@
 }
 
 .link-column a:hover {
-  color: #2dd4bf;
+  color: #00CED1;
   padding-left: 0.5rem;
 }
 
@@ -139,6 +141,7 @@
 }
 
 .footer-newsletter h3 {
+  font-family: 'Clash Display', sans-serif;
   color: #fff;
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -166,8 +169,9 @@
 }
 
 .newsletter-form button {
+  font-family: 'Clash Display', sans-serif;
   padding: 1rem 1.5rem;
-  background: #2dd4bf;
+  background: #20B2AA;
   border: none;
   border-radius: 4px;
   color: #000;
@@ -178,9 +182,9 @@
 }
 
 .newsletter-form button:hover {
-  background: #20a090;
+  background: #00CED1;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(45, 212, 191, 0.3);
+  box-shadow: 0 5px 15px rgba(32, 178, 170, 0.3);
 }
 
 /* Footer Bottom */
@@ -195,9 +199,9 @@
 
 .footer-line {
   height: 1px;
-  background: linear-gradient(to right, transparent, #2dd4bf, transparent);
+  background: linear-gradient(to right, transparent, #20B2AA, transparent);
   margin-bottom: 2rem;
-  box-shadow: 0 0 10px #2dd4bf;
+  box-shadow: 0 0 10px #20B2AA;
 }
 
 .footer-info {
@@ -224,7 +228,7 @@
 }
 
 .footer-extra-links a:hover {
-  color: #2dd4bf;
+  color: #00CED1;
 }
 
 .divider {
@@ -404,10 +408,11 @@
 }
 
 .footer-brand-col h3 {
+  font-family: 'Clash Display', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  background: linear-gradient(135deg, #20B2AA, #00CED1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
@@ -444,7 +449,7 @@
 }
 
 .social-link:hover {
-  color: #3b82f6;
+  color: #20B2AA;
   transform: translateY(-4px);
 }
 
@@ -453,6 +458,7 @@
 }
 
 .footer-links-col h4 {
+  font-family: 'Clash Display', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -468,7 +474,7 @@
   left: 0;
   width: 30px;
   height: 3px;
-  background: #3b82f6;
+  background: #20B2AA;
   border-radius: 2px;
 }
 
@@ -497,12 +503,12 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background: #3b82f6;
+  background: #20B2AA;
   transition: width 0.3s ease;
 }
 
 .footer-links-col ul li a:hover {
-  color: #3b82f6;
+  color: #00CED1;
   transform: translateX(5px);
 }
 
