@@ -1,0 +1,191 @@
+.community-page {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .community-header {
+    background: #2d2f35;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid #3f4147;
+  }
+  
+  .community-info {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .community-avatar {
+    width: 80px;
+    height: 80px;
+    background: #20B2AA;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .community-details h1 {
+    margin: 0 0 8px 0;
+    color: #f3f4f6;
+  }
+  
+  .community-details p {
+    color: #9ca3af;
+    margin: 0 0 16px 0;
+  }
+  
+  .community-stats {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .community-stats span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #9ca3af;
+  }
+  
+  .create-post {
+    background: #2d2f35;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    border: 1px solid #3f4147;
+  }
+  
+  .post-input {
+    flex: 1;
+    background: #36393f;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    color: #f3f4f6;
+  }
+  
+  .post-btn {
+    background: #20B2AA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .post-btn:hover {
+    background: #00CED1;
+  }
+  
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .post-card {
+    background: #2d2f35;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #3f4147;
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    background: #20B2AA;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .author-info h3 {
+    margin: 0;
+    color: #f3f4f6;
+    font-size: 16px;
+  }
+  
+  .author-info span {
+    color: #9ca3af;
+    font-size: 12px;
+  }
+  
+  .more-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+  .more-btn:hover {
+    background: #36393f;
+  }
+  
+  .post-content {
+    color: #f3f4f6;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 16px;
+    border-top: 1px solid #3f4147;
+    padding-top: 16px;
+  }
+  
+  .post-actions button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  
+  .post-actions button:hover {
+    background: #36393f;
+    color: #f3f4f6;
+  }
+  
+  @media (max-width: 768px) {
+    .community-info {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .community-stats {
+      justify-content: center;
+    }
+  }
