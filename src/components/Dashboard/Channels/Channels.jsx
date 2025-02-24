@@ -6,67 +6,83 @@ import {
   Briefcase, 
   Search,
   Plus,
-  Settings
+  Settings,
+  MessageSquare,
+  Code,
+  Globe,
+  Zap
 } from 'lucide-react';
 import styles from './Channels.module.css';
 
 const Channels = () => {
   const [activeChannel, setActiveChannel] = useState('general');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const channelCategories = [
     {
       title: "Academic Channels",
       icon: <BookOpen size={20} />,
       channels: [
-        { id: 'cs-dept', name: 'Computer Science', type: 'academic' },
-        { id: 'engineering', name: 'Engineering', type: 'academic' },
-        { id: 'study-group', name: 'Study Groups', type: 'academic' }
+        { id: 'cs-dept', name: 'Computer Science', type: 'academic', unread: 3 },
+        { id: 'engineering', name: 'Engineering', type: 'academic', unread: 0 },
+        { id: 'study-group', name: 'Study Groups', type: 'academic', unread: 5 }
       ]
     },
     {
-      title: "Campus Life",
+      title: "Community Channels",
       icon: <Users size={20} />,
       channels: [
-        { id: 'events', name: 'Events & Announcements', type: 'campus' },
-        { id: 'clubs', name: 'Club Activities', type: 'campus' },
-        { id: 'student-council', name: 'Student Council', type: 'campus' }
+        { id: 'general', name: 'General Discussion', type: 'community', unread: 0 },
+        { id: 'announcements', name: 'Announcements', type: 'community', unread: 2 },
+        { id: 'events', name: 'Events', type: 'community', unread: 1 }
       ]
     },
     {
-      title: "Career & Opportunities",
-      icon: <Briefcase size={20} />,
+      title: "Project Channels",
+      icon: <Code size={20} />,
       channels: [
-        { id: 'internships', name: 'Internship Updates', type: 'career' },
-        { id: 'placements', name: 'Placement Cell', type: 'career' },
-        { id: 'alumni', name: 'Alumni Network', type: 'career' }
+        { id: 'hackathon', name: 'Hackathon Projects', type: 'project', unread: 0 },
+        { id: 'opensource', name: 'Open Source', type: 'project', unread: 7 },
+        { id: 'innovations', name: 'Innovations', type: 'project', unread: 0 }
       ]
     }
   ];
 
+  const filteredCategories = channelCategories.map(category => ({
+    ...category,
+    channels: category.channels.filter(channel =>
+      channel.name.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  })).filter(category => category.channels.length > 0);
+
   return (
     <div className={styles.channelsContainer}>
-      {/* Channels Header */}
       <div className={styles.channelsHeader}>
         <h1>Channels</h1>
         <div className={styles.headerActions}>
-          <button className={styles.createBtn}>
+          <button className={styles.newChannelButton}>
             <Plus size={20} />
-            Create Channel
+            New Channel
+          </button>
+          <button className={styles.settingsButton}>
+            <Settings size={20} />
           </button>
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className={styles.searchBar}>
-        <Search size={16} />
-        <input type="text" placeholder="Search channels..." />
+      <div className={styles.searchContainer}>
+        <Search size={20} />
+        <input
+          type="text"
+          placeholder="Search channels..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
 
-      {/* Channels Grid */}
       <div className={styles.channelsGrid}>
-        {/* Categories List */}
         <div className={styles.categoriesList}>
-          {channelCategories.map((category, index) => (
+          {filteredCategories.map((category, index) => (
             <div key={index} className={styles.category}>
               <div className={styles.categoryHeader}>
                 <span className={styles.categoryIcon}>{category.icon}</span>
@@ -76,13 +92,14 @@ const Channels = () => {
                 {category.channels.map((channel) => (
                   <button
                     key={channel.id}
-                    className={`${styles.channelItem} ${
-                      activeChannel === channel.id ? styles.active : ''
-                    }`}
+                    className={`${styles.channelItem} ${activeChannel === channel.id ? styles.active : ''}`}
                     onClick={() => setActiveChannel(channel.id)}
                   >
                     <Hash size={16} />
                     <span>{channel.name}</span>
+                    {channel.unread > 0 && (
+                      <span className={styles.unreadBadge}>{channel.unread}</span>
+                    )}
                   </button>
                 ))}
               </div>
@@ -90,22 +107,19 @@ const Channels = () => {
           ))}
         </div>
 
-        {/* Channel Content Area */}
         <div className={styles.channelContent}>
           <div className={styles.channelHeader}>
             <div className={styles.channelInfo}>
               <Hash size={20} />
-              <h2>{channelCategories
-                .flatMap(cat => cat.channels)
-                .find(ch => ch.id === activeChannel)?.name}</h2>
+              <h2>{channelCategories.flatMap(c => c.channels).find(c => c.id === activeChannel)?.name}</h2>
             </div>
-            <button className={styles.settingsBtn}>
-              <Settings size={20} />
-            </button>
           </div>
-          {/* Channel content will go here */}
           <div className={styles.channelMessages}>
-            {/* Messages and interactions will be implemented here */}
+            <div className={styles.emptyState}>
+              <MessageSquare size={48} />
+              <h3>Welcome to the channel!</h3>
+              <p>This is the start of the conversation. Be the first one to say hello!</p>
+            </div>
           </div>
         </div>
       </div>
