@@ -19,7 +19,6 @@ import Community from './Community/Community';
 import Contributions from './contributions/Contributions';
 import Help from './help/Help';
 import LocalIssues from './localIssues/LocalIssues';
-import Channels from './Channels/Channels';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -31,7 +30,7 @@ const Dashboard = () => {
     { title: 'Community', icon: <Users size={20} />, path: '/dashboard/community' },
     { title: 'Organizations', icon: <Building2 size={20} />, path: '/dashboard/organizations' },
     { title: 'Local Issues', icon: <MapPin size={20} />, path: '/dashboard/local-issues' },
-    { title: 'Channels', icon: <MessageSquare size={20} />, path: '/dashboard/channels' },
+    { title: 'Channels', icon: <MessageSquare size={20} />, path: '/dashboard/Channels' },
     { title: 'Contributions', icon: <GitFork size={20} />, path: '/dashboard/contributions' },
     { title: 'Insights', icon: <BarChart3 size={20} />, path: '/dashboard/insights' },
     { title: 'Help', icon: <HelpCircle size={20} />, path: '/dashboard/help' }
@@ -111,7 +110,7 @@ const Dashboard = () => {
             <Route path="contributions" element={<Contributions />} />
             <Route path="local-issues/*" element={<LocalIssues />} />
             <Route path="organizations" element={<div>Organizations Section</div>} />
-            <Route path="channels" element={<Channels />} />
+            <Route path="channels" element={<div>Channels Section</div>} />
             <Route path="insights" element={<div>Insights Section</div>} />
             <Route path="help" element={<Help />} />
             <Route path="*" element={<HomeSection />} />
