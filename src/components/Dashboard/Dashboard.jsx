@@ -19,6 +19,7 @@ import Community from './Community/Community';
 import Contributions from './contributions/Contributions';
 import Help from './help/Help';
 import LocalIssues from './localIssues/LocalIssues';
+import Channels from './Channels/Channels'
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ const Dashboard = () => {
             <Route path="contributions" element={<Contributions />} />
             <Route path="local-issues/*" element={<LocalIssues />} />
             <Route path="organizations" element={<div>Organizations Section</div>} />
-            <Route path="channels" element={<div>Channels Section</div>} />
+            <Route path="channels" element={< Channels/>} />
             <Route path="insights" element={<div>Insights Section</div>} />
             <Route path="help" element={<Help />} />
             <Route path="*" element={<HomeSection />} />
