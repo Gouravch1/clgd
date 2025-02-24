@@ -24,7 +24,7 @@
   /* Sidebar Styles */
   .sidebar {
     position: fixed;
-    width: 70px; /* Start collapsed */
+    width: 80px; /* Default collapsed width */
     height: auto;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(12px);
@@ -39,7 +39,7 @@
   }
   
   .sidebar:hover {
-    width: 240px;
+    width: 250px; /* Expanded width on hover */
   }
   
   .sidebar-header {
@@ -99,7 +99,12 @@
   .sidebar-nav {
     display: flex;
     flex-direction: column;
-    padding: 1rem 0.5rem;
+    height: 100%;
+    position: relative;
+  }
+  
+  .nav-items {
+    flex: 1;
   }
   
   .nav-item {
@@ -265,4 +270,112 @@
 .nav-item.active {
   background-color: #36393f;
   color: #20B2AA;
+}
+
+.logout-section {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 25, 40, 0) 0%,
+    rgba(17, 25, 40, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+}
+
+.logout-button {
+  width: 100%;
+  padding: 1.25rem;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.1) 0%,
+    rgba(239, 68, 68, 0.05) 100%
+  );
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 16px;
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center icon when collapsed */
+  gap: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar:hover .logout-button {
+  justify-content: flex-start; /* Align left when expanded */
+}
+
+.logout-button span {
+  display: none; /* Hide text by default */
+  font-family: 'Clash Display', sans-serif;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  position: relative;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover .logout-button span {
+  display: block; /* Show text on sidebar hover */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Adjust icon size and position */
+.logout-button svg {
+  min-width: 22px;
+  height: 22px;
+  transition: all 0.4s ease;
+}
+
+/* Dark theme adjustments */
+@media (prefers-color-scheme: dark) {
+  .logout-section {
+    background: linear-gradient(
+      to bottom,
+      rgba(17, 25, 40, 0) 0%,
+      rgba(17, 25, 40, 0.95) 100%
+    );
+  }
+
+  .logout-button {
+    background: linear-gradient(
+      135deg,
+      rgba(239, 68, 68, 0.15) 0%,
+      rgba(239, 68, 68, 0.08) 100%
+    );
+  }
+
+  .logout-button:hover {
+    background: rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+  
+  .sidebar:hover {
+    width: 100%;
+  }
+
+  .logout-button {
+    justify-content: flex-start;
+  }
+
+  .logout-button span {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

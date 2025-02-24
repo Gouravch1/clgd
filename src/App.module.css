@@ -7,10 +7,16 @@
 
 /* Fullpage.js section styling */
 .section {
-  position: relative;
-  height: 100vh !important;
+  height: 100vh;
   width: 100%;
-  overflow: hidden;
+  position: relative;
+}
+
+/* Add these styles if you want to keep your existing page styling */
+:global(.section) {
+  height: 100vh;
+  width: 100%;
+  position: relative;
 }
 
 .sectionContent {
@@ -67,4 +73,23 @@ body,
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
+}
+
+:global(.fp-watermark) {
+  display: none !important;
+}
+
+:global(.fp-warning) {
+  display: none !important;
+}
+
+.mainContainer {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
 }

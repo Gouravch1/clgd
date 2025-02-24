@@ -1,15 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 import styles from './Welcome.module.css';
 
 const Welcome = () => {
-  const handleScrollDown = () => {
-    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-    const targetPosition = currentPosition + window.innerHeight;
-    
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    });
+  const navigate = useNavigate();
+
+  const handleJoinClick = () => {
+    navigate('/auth');
   };
 
   return (
@@ -41,14 +38,14 @@ const Welcome = () => {
             THAT DRIVE MEANINGFUL AND LASTING SOCIAL CHANGE."
           </p>
           
-          <button className={styles.ctaButton}>
+          <button 
+            className={styles.ctaButton} 
+            onClick={handleJoinClick}
+            style={{ pointerEvents: 'auto' }}
+          >
             JOIN US
             <span className={styles.arrow}>→</span>
           </button>
-        </div>
-        
-        <div className={styles.scrollDownButton} onClick={handleScrollDown}>
-          <span className={styles.scrollArrow}>↓</span>
         </div>
       </div>
     </div>
