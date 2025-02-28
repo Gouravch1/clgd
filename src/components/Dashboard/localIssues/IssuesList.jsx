@@ -5,8 +5,9 @@ import {
   Clock,
   MapPin,
   Building,
-  ChevronRight,
   Users,
+  User,
+  ChevronRight,
   Activity,
   Calendar,
 } from 'lucide-react';
@@ -22,19 +23,6 @@ const getUrgencyIcon = (level) => {
       return <Clock className={styles.urgencyLow} />;
     default:
       return null;
-  }
-};
-
-const getStatusColor = (status) => {
-  switch (status) {
-    case 'open':
-      return styles.statusOpen;
-    case 'in-progress':
-      return styles.statusInProgress;
-    case 'resolved':
-      return styles.statusResolved;
-    default:
-      return '';
   }
 };
 
@@ -54,9 +42,6 @@ const IssueCard = ({ issue }) => {
           {getUrgencyIcon(issue.urgencyLevel)}
           <span>{issue.urgencyLevel}</span>
         </div>
-        <div className={`${styles.statusBadge} ${getStatusColor(issue.status)}`}>
-          {issue.status}
-        </div>
       </div>
 
       <h3 className={styles.issueTitle}>{issue.title}</h3>
@@ -69,8 +54,12 @@ const IssueCard = ({ issue }) => {
 
       <div className={styles.issueDetails}>
         <div className={styles.detailItem}>
-          <Building size={16} />
-          <span>{issue.college}</span>
+          {issue.organization ? (
+            <Building size={16} />
+          ) : (
+            <Users size={16} />
+          )}
+          <span>{issue.organization || issue.club}</span>
         </div>
         <div className={styles.detailItem}>
           <MapPin size={16} />
@@ -80,13 +69,13 @@ const IssueCard = ({ issue }) => {
           <Calendar size={16} />
           <span>{new Date(issue.dateReported).toLocaleDateString()}</span>
         </div>
+        <div className={styles.detailItem}>
+          <User size={16} />
+          <span>{issue.contactPerson}</span>
+        </div>
       </div>
 
       <div className={styles.cardFooter}>
-        <div className={styles.contactInfo}>
-          <Users size={16} />
-          <span>{issue.contactPerson}</span>
-        </div>
         <button className={styles.viewButton}>
           View Details
           <ChevronRight size={16} />

@@ -1,56 +1,55 @@
 export const mockIssues = [
   {
     id: 1,
-    title: "Education Support Needed for Slum Children",
-    description: "Over 100 children in Indira Nagar slum area lack basic education access. Many have dropped out due to financial constraints. Need volunteers for evening classes and donations for books, uniforms, and basic supplies. Currently, only 30% of children attend school regularly.",
+    title: "Lack of Clean Drinking Water",
+    description: "Residents in the Indira Nagar area, India, are facing severe water quality issues. Many families report that the water supplied is contaminated, leading to health concerns. Immediate action is needed to provide clean drinking water.",
     urgencyLevel: "high",
-    status: "in-progress",
-    location: "Indira Nagar Slum Area",
-    organization: "Shiksha Foundation",
+    status: "open",
+    location: "Indira Nagar, India",
+    organization: "Local Community Group",
+    club: "",
+    university: "Delhi Technological University",
     dateReported: "2024-03-15",
     contactPerson: "Anita Deshmukh",
-    contactEmail: "anita.d@shiksha.org",
+    contactEmail: "anita.d@community.org",
     contactPhone: "9876543210",
-    category: "Education",
+    category: "Water Supply",
     impact: "Community",
     images: [
-      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1000",
-      "https://images.unsplash.com/photo-1511949860663-92c5c57d48a7?w=1000"
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHdhdGVyfGVufDB8fHx8MTY0MjY5NzY0Nw&ixlib=rb-1.2.1&q=80&w=1080",
+      "https://images.unsplash.com/photo-1593642632850-149c1c4d1c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHx3YXRlcnxlbnwwfHx8fDE2NDI2OTc2NDc&ixlib=rb-1.2.1&q=80&w=1080"
     ],
-    updates: [
-      {
-        date: "2024-03-20",
-        content: "Initial survey completed. 25 volunteers registered for teaching program."
-      }
-    ]
+    updates: []
   },
   {
     id: 2,
-    title: "Skill Development Center for Women",
-    description: "Women in Lakshmi Nagar seeking employment opportunities. Need to establish skill development center for computer training, tailoring, and handicraft making. Already 50 women registered for training. Requires space, equipment, and trainers.",
+    title: "Street Lighting Needed",
+    description: "Residents in Lakshmi Nagar, India, are concerned about the lack of street lighting, which has led to safety issues at night. Many people feel unsafe walking home after dark. A request for installation of street lights has been made.",
     urgencyLevel: "medium",
-    status: "open",
-    location: "Lakshmi Nagar",
-    organization: "Mahila Shakti Group",
+    status: "in-progress",
+    location: "Lakshmi Nagar, India",
+    organization: "",
+    club: "Neighborhood Watch",
+    university: "IIT Delhi",
     dateReported: "2024-03-10",
     contactPerson: "Seema Malhotra",
-    contactEmail: "seema.m@mahilashakti.org",
+    contactEmail: "seema.m@neighborhood.org",
     contactPhone: "9876543211",
-    category: "Employment",
+    category: "Safety",
     impact: "Neighborhood",
     images: [
-      "https://images.unsplash.com/photo-1489386659872-38f38b783d07?w=1000",
-      "https://images.unsplash.com/photo-1556742393-f61743a3b1c9?w=1000"
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHN0cmVldCUyMGxpdGh0aW5nfGVufDB8fHx8MTY0MjY5NzY0Nw&ixlib=rb-1.2.1&q=80&w=1080",
+      "https://images.unsplash.com/photo-1593642632850-149c1c4d1c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHxzdHJlZXQlMjBsaWdodGluZ3xlbnwwfHx8fDE2NDI2OTc2NDc&ixlib=rb-1.2.1&q=80&w=1080"
     ],
     updates: []
   },
   {
     id: 3,
-    title: "Healthcare Camp in Rural Area",
-    description: "Urgent need for medical camp in Rampur village. Many elderly residents unable to travel to city hospitals. Need doctors, medicines, and basic medical equipment for weekly health checkups. Cases of diabetes and hypertension increasing.",
+    title: "Healthcare Access for Elderly",
+    description: "Elderly residents in Rampur Village, India, are struggling to access healthcare services. Many are unable to travel to hospitals due to mobility issues. A mobile health clinic is needed to provide regular check-ups.",
     urgencyLevel: "high",
-    status: "in-progress",
-    location: "Rampur Village",
+    status: "open",
+    location: "Rampur Village, India",
     organization: "Rural Health Initiative",
     dateReported: "2024-03-08",
     contactPerson: "Dr. Suresh Yadav",
@@ -59,23 +58,18 @@ export const mockIssues = [
     category: "Healthcare",
     impact: "Village",
     images: [
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000",
-      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1000"
+      "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1000",
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000"
     ],
-    updates: [
-      {
-        date: "2024-03-18",
-        content: "5 doctors volunteered. First camp scheduled for next Sunday."
-      }
-    ]
+    updates: []
   },
   {
     id: 4,
-    title: "Food Security for Daily Wage Workers",
-    description: "200+ daily wage workers in Gandhi Nagar struggling for regular meals. Many families skipping meals due to irregular work. Need support for community kitchen and monthly ration distribution. Children showing signs of malnutrition.",
+    title: "Food Insecurity Among Daily Wage Workers",
+    description: "Daily wage workers in Gandhi Nagar, India, are facing food insecurity due to irregular work. Many families are skipping meals. A community kitchen is needed to provide regular meals to those in need.",
     urgencyLevel: "high",
-    status: "open",
-    location: "Gandhi Nagar Labor Colony",
+    status: "in-progress",
+    location: "Gandhi Nagar, India",
     organization: "Roti Bank Foundation",
     dateReported: "2024-03-05",
     contactPerson: "Kabir Singh",
@@ -84,24 +78,24 @@ export const mockIssues = [
     category: "Food Security",
     impact: "Community",
     images: [
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000",
-      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1000"
+      "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1000",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000"
     ],
     updates: []
   },
   {
     id: 5,
-    title: "Senior Citizen Support Program",
-    description: "Elderly residents in Shanti Nagar need assistance with daily activities and medical care. Many living alone without family support. Require volunteers for regular visits, medicine delivery, and emotional support. Currently supporting 45 seniors.",
+    title: "Child Safety in Local Parks",
+    description: "Parents in Shanti Nagar, India, are concerned about the safety of children playing in local parks. There have been reports of unsafe equipment and lack of supervision. Community efforts are needed to improve park safety.",
     urgencyLevel: "medium",
-    status: "in-progress",
-    location: "Shanti Nagar",
-    organization: "Elder Care Society",
+    status: "open",
+    location: "Shanti Nagar, India",
+    organization: "Community Safety Group",
     dateReported: "2024-03-01",
     contactPerson: "Rekha Menon",
-    contactEmail: "rekha.m@eldercare.org",
+    contactEmail: "rekha.m@community.org",
     contactPhone: "9876543214",
-    category: "Elderly Care",
+    category: "Child Safety",
     impact: "Locality",
     images: [
       "https://images.unsplash.com/photo-1516673619317-b535966b11b8?w=1000",
@@ -111,42 +105,77 @@ export const mockIssues = [
   },
   {
     id: 6,
-    title: "Child Labor Prevention Initiative",
-    description: "Increasing cases of child labor in local factories and shops. At least 30 children identified working in hazardous conditions. Need intervention for rehabilitation and school enrollment. Families need alternative income support.",
+    title: "Traffic Congestion and Safety",
+    description: "Residents in the Industrial Area, Sector 4, India, are facing severe traffic congestion during peak hours. There is a need for better traffic management and safety measures to prevent accidents.",
     urgencyLevel: "high",
-    status: "open",
-    location: "Industrial Area, Sector 4",
-    organization: "Bachpan Bachao Samiti",
+    status: "in-progress",
+    location: "Industrial Area, Sector 4, India",
+    organization: "Traffic Management Committee",
     dateReported: "2024-02-28",
     contactPerson: "Vikram Reddy",
-    contactEmail: "vikram.r@bachpan.org",
+    contactEmail: "vikram.r@traffic.org",
     contactPhone: "9876543215",
-    category: "Child Rights",
+    category: "Traffic Safety",
     impact: "Area",
     images: [
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000",
-      "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1000"
+      "https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=1000",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1000"
     ],
-    updates: [
-      {
-        date: "2024-03-15",
-        content: "Survey completed. 15 children rescued and enrolled in bridge school program."
-      }
-    ]
+    updates: []
+  },
+  {
+    id: 7,
+    title: "Affordable Housing Crisis",
+    description: "In New York City, USA, many low-income families are struggling to find affordable housing. The rising rent prices are pushing families out of their neighborhoods. Community action is needed to address this crisis.",
+    urgencyLevel: "high",
+    status: "open",
+    location: "New York City, USA",
+    organization: "Housing Advocacy Group",
+    club: "",
+    dateReported: "2024-03-12",
+    contactPerson: "John Smith",
+    contactEmail: "john.smith@housing.org",
+    contactPhone: "1234567890",
+    category: "Housing",
+    impact: "Community",
+    images: [
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHdhdGVyfGVufDB8fHx8MTY0MjY5NzY0Nw&ixlib=rb-1.2.1&q=80&w=1080",
+      "https://images.unsplash.com/photo-1593642632850-149c1c4d1c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHx3YXRlcnxlbnwwfHx8fDE2NDI2OTc2NDc&ixlib=rb-1.2.1&q=80&w=1080"
+    ],
+    updates: []
+  },
+  {
+    id: 8,
+    title: "Pollution in Urban Areas",
+    description: "Residents in Beijing, China, are facing severe air pollution issues. The government is being urged to take action to reduce emissions and improve air quality for the health of its citizens.",
+    urgencyLevel: "high",
+    status: "in-progress",
+    location: "Beijing, China",
+    organization: "Clean Air Initiative",
+    dateReported: "2024-03-14",
+    contactPerson: "Li Wei",
+    contactEmail: "li.wei@cleanair.org",
+    contactPhone: "9876543216",
+    category: "Environment",
+    impact: "City",
+    images: [
+      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHdhdGVyfGVufDB8fHx8MTY0MjY5NzY0Nw&ixlib=rb-1.2.1&q=80&w=1080",
+      "https://images.unsplash.com/photo-1593642632850-149c1c4d1c4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHx3YXRlcnxlbnwwfHx8fDE2NDI2OTc2NDc&ixlib=rb-1.2.1&q=80&w=1080"
+    ],
+    updates: []
   }
 ];
 
 export const categories = [
-  'Education',
+  'Water Supply',
+  'Safety',
   'Healthcare',
   'Food Security',
-  'Employment',
-  'Child Rights',
-  'Women Empowerment',
-  'Elderly Care',
-  'Disability Support',
-  'Mental Health',
-  'Poverty Alleviation'
+  'Child Safety',
+  'Traffic Safety',
+  'Community Support',
+  'Housing',
+  'Environment'
 ];
 
 export const impactLevels = [
@@ -154,5 +183,6 @@ export const impactLevels = [
   'Neighborhood',
   'Locality',
   'Area',
-  'Community'
+  'Community',
+  'City'
 ];

@@ -5,7 +5,7 @@ import styles from './Welcome.module.css';
 const Welcome = () => {
   const navigate = useNavigate();
 
-  const handleJoinClick = () => {
+  const handleAuthClick = () => {
     navigate('/auth');
   };
 
@@ -40,7 +40,7 @@ const Welcome = () => {
           
           <button 
             className={styles.ctaButton} 
-            onClick={handleJoinClick}
+            onClick={handleAuthClick}
             style={{ pointerEvents: 'auto' }}
           >
             JOIN US

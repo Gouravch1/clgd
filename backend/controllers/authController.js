@@ -5,107 +5,150 @@ const User = require('../models/User');
 // Sign Up Controller
 exports.signup = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    console.log('Signup attempt:', { name, email });
+    const {
+      // Common fields
+      email,
+      password,
+      userType,
+      fullName,
 
-    // Validate input
-    if (!name || !email || !password) {
-      console.log('Missing required fields');
-      return res.status(400).json({ 
-        message: 'Please provide all required fields' 
-      });
-    }
+      // Student fields
+      university,
+      studentId,
+      country,
+      major,
+      academicYear,
+      department,
+      graduationYear,
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ 
-        message: 'Please provide a valid email address' 
-      });
-    }
+      // Organization fields
+      orgName,
+      orgType,
+      website,
+      location,
+      registrationNumber,
+      establishedYear,
+      employeeCount,
+      industryCategory
+    } = req.body;
 
-    // Validate password length
-    if (password.length < 6) {
-      return res.status(400).json({ 
-        message: 'Password must be at least 6 characters long' 
-      });
-    }
-
-    // Check if user exists
-    const existingUser = await User.findOne({ email });
+    // Check if user already exists
+    const existingUser = await User.findOne({ email: email.toLowerCase() });
     if (existingUser) {
-      console.log('User already exists:', email);
-      return res.status(400).json({ 
-        message: 'User already exists with this email' 
-      });
+      return res.status(400).json({ message: 'Email already registered' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12);
+    // Create user object based on user type
+    const userData = {
+      email,
+      password,
+      userType: userType || 'student',
+      fullName,
+      ...(userType === 'student' ? {
+        // Student specific fields
+        university,
+        studentId,
+        country,
+        major,
+        academicYear,
+        department,
+        graduationYear
+      } : {
+        // Organization specific fields
+        orgName,
+        orgType,
+        website,
+        location,
+        registrationNumber,
+        establishedYear,
+        employeeCount: employeeCount ? Number(employeeCount) : undefined,
+        industryCategory
+      })
+    };
 
     // Create new user
-    const user = new User({
-      name,
-      email,
-      password: hashedPassword
-    });
-
+    const user = new User(userData);
     await user.save();
-    console.log('User created successfully:', user._id);
 
-    // Generate JWT
+    // Generate JWT token
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user._id, userType: user.userType },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
+    // Send response
     res.status(201).json({
+      message: 'User created successfully',
       token,
       userId: user._id,
-      name: user.name,
-      message: 'User created successfully'
+      userType: user.userType,
+      fullName: user.fullName || user.orgName
     });
+
   } catch (error) {
     console.error('Signup error:', error);
-    res.status(500).json({ 
-      message: 'Error creating user. Please try again.' 
+    res.status(500).json({
+      message: 'Error creating user',
+      error: error.message
     });
   }
 };
 
 // Sign In Controller
-exports.signin = async (req, res) => {
+exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user
-    const user = await User.findOne({ email });
+    // Find user by email
+    const user = await User.findOne({ email: email.toLowerCase() });
     if (!user) {
-      return res.status(400).json({ message: 'User not found' });
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    // Verify password
-    const isValidPassword = await bcrypt.compare(password, user.password);
-    if (!isValidPassword) {
-      return res.status(400).json({ message: 'Invalid password' });
+    // Check password
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    // Generate JWT
+    // Generate JWT token
     const token = jwt.sign(
-      { userId: user._id },
+      { userId: user._id, userType: user.userType },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
+    // Send response
     res.json({
+      message: 'Login successful',
       token,
       userId: user._id,
-      name: user.name,
-      message: 'Logged in successfully'
+      userType: user.userType,
+      fullName: user.fullName || user.orgName
     });
+
   } catch (error) {
-    console.error('Signin error:', error);
-    res.status(500).json({ message: 'Error signing in' });
+    console.error('Login error:', error);
+    res.status(500).json({
+      message: 'Error during login',
+      error: error.message
+    });
+  }
+};
+
+exports.getProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.userId).select('-password');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error('Get profile error:', error);
+    res.status(500).json({
+      message: 'Error fetching profile',
+      error: error.message
+    });
   }
 };
